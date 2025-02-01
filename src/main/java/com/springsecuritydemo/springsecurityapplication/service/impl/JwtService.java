@@ -48,7 +48,6 @@ public class JwtService implements UserDetailsService {
       throw new UsernameNotFoundException("user-not-found-with-username" + username);
     }
   }
-
   private Set getAuthority(UserModel user) {
     Set<SimpleGrantedAuthority> authorities = new HashSet<>();
     for (RoleModel role : user.getRoleModelsList()) {
@@ -56,7 +55,6 @@ public class JwtService implements UserDetailsService {
     }
     return authorities;
   }
-
   public LoginResponse createJwtToken(LoginRequest loginRequest) throws Exception {
     String username = loginRequest.getUsername();
     String userPassword = loginRequest.getUserPassword();
